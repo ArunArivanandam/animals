@@ -1,4 +1,5 @@
-// 'named import' is used for 'useState', so that only relevant code is imported not the entire library also benefits performance, clarity and avoids namespace conflicts
+// 'named import' is used for 'useState', so that only relevant code is imported not the entire library,
+// also benefits performance, clarity and avoids namespace conflicts
 import { useState } from "react";
 import AnimalShow from "./AnimalShow";
 // A side-effect import
@@ -12,12 +13,12 @@ function getRandomAnimal() {
 
 function App() {
   // 'useState' hook initializes the 'animals' variable (state) to empty array
-  // 'setAnimals' is a function through which state is changed
+  // 'setAnimals' is a function through which state is updated
   const [animals, setAnimals] = useState([]);
 
   const handleClick = () => {
     // The argument of setAnimals() is used to change the state
-    // here, spread operatior is used to place current elements of animals array inside a new array, and  getRandomAnimal() adds one more random animal at the end of an array
+    // here, spread operatior is used to place current elements of animals array inside a new array, and  'getRandomAnimal()' adds one more random animal at the end of the array
     setAnimals([...animals, getRandomAnimal()]);
   };
 
